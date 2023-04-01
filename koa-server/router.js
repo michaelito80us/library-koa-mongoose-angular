@@ -25,14 +25,6 @@ router.put('/books/:bookId', booksController.updateOneBook);
 // /books/:bookId
 router.del('/books/:bookId', booksController.deleteOneBook);
 
-// getAllAuthors
-// /authors
-router.get('/authors', authorsController.getAllAuthors);
-
-// addOneAuthor
-// /authors
-router.post('/authors', authorsController.addOneAuthor);
-
 // getBooksByAuthor
 // books/?author=:authorName
 // router.get('/books/', );
