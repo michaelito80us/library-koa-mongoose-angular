@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 mongoose.connect(
-  'mongodb+srv://mepelboim:mic136@books.wvy7jms.mongodb.net/?retryWrites=true&w=majority'
+  'mongodb://127.0.0.1:27017/library'
 );
 
 mongoose.connection.once('open', () => {
