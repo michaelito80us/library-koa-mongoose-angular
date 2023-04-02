@@ -14,7 +14,7 @@ export class BookDetailsComponent implements OnInit {
     private route: ActivatedRoute,
     private apiClient: ApiClientService,
     private router: Router,
-    private data: AppDataService
+    private dataService: AppDataService
   ) {}
 
   book!: Book;
@@ -29,7 +29,7 @@ export class BookDetailsComponent implements OnInit {
   }
 
   editBook() {
-    this.data.bookId = this.book._id;
+    this.dataService.bookId = this.book._id;
     this.router.navigateByUrl('/books/form');
   }
 

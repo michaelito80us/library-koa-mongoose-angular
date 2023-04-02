@@ -1,9 +1,12 @@
-# practice excercise: a library
+# practice excercise: a library with 2 back-end servers
 
-## Backend: 
-- Koa Server
+## Back-end:
+
+- Koa Server (one version)
+- Express Server (another version)
 - Mongoose
 
 ## Front End:
+
 - Angular
 - Typescript

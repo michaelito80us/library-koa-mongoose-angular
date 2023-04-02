@@ -14,7 +14,7 @@ export class EditBookFormComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private apiClient: ApiClientService,
-    private data: AppDataService,
+    private dataService: AppDataService,
     private formBuilder: FormBuilder,
     private router: Router
   ) {}
@@ -23,14 +23,14 @@ export class EditBookFormComponent implements OnInit {
   hasBook?: boolean;
 
   ngOnInit(): void {
-    const bookId = this.data.bookId;
+    const bookId = this.dataService.bookId;
     if (bookId) {
       this.hasBook = true;
       this.apiClient.getOneBook(bookId).subscribe((res) => {
         this.book = res;
         this.populateBookForm();
       });
-      this.data.bookId = undefined;
+      this.dataService.bookId = undefined;
     }
 
     this.bookform.valueChanges.subscribe(() => {});
