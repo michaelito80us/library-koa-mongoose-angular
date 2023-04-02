@@ -37,7 +37,6 @@ exports.getOneBook = async (ctx) => {
 
 exports.addOneBook = async (ctx) => {
   const bookToAdd = ctx.request.body;
-  console.log({ bookToAdd });
   try {
     const newBook = await Book.create({
       title: bookToAdd.title,
@@ -79,8 +78,8 @@ exports.updateOneBook = async (ctx) => {
 exports.deleteOneBook = async (ctx) => {
   const id = ctx.params.bookId;
   try {
-    const confirmation = await Book.findByIdAndDelete(id);
-    ctx.status = 301;
+    await Book.findByIdAndDelete(id);
+    ctx.status = 200;
     ctx.body = { message: 'Book Deleted' };
   } catch (error) {
     ctx.status = 500;
