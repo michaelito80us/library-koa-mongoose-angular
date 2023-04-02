@@ -1,0 +1,15 @@
+<div class="container">
+  <a routerLink="/">
+    <button>Home</button>
+  </a>
+
+  <h2>{{book.title}}</h2>
+
+  <h3>by: {{book.author}}</h3>
+
+  <p>summary: {{book.summary}}</p>
+
+  <button (click)="editBook()">Edit Book</button>
+  <button (click)="deleteBook()">Delete Book</button>
+
+</div>

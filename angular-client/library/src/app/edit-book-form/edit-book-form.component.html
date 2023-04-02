@@ -1,0 +1,28 @@
+<button (click)="goHome()">Home</button>
+
+<h1 *ngIf="this.hasBook"> Edit book</h1>
+<h1 *ngIf="!this.hasBook"> Create book</h1>
+
+
+<form (ngSubmit)="handleSubmit()" [formGroup]="bookform">
+  <div class="form">
+    <div class="form-item">
+      <label for="">Title: </label>
+      <input type="text" formControlName="title" />
+    </div>
+    <div class="form-item">
+      <label for="">Author: </label>
+      <input type="text" formControlName="author" />
+
+    </div>
+    <div class="form-item">
+      <label for="">Summary: </label>
+      <textarea type="text" formControlName="summary"></textarea>
+
+    </div>
+
+  </div>
+
+
+  <button [disabled]="bookform.invalid" type="submit">Submit</button>
+</form>

@@ -1,0 +1,14 @@
+<div class="shelf">
+  <h2>{{"here's a list of all your books:" | uppercase}}</h2>
+  <div>
+    <button (click)="addBook()">Add Book to Library</button>
+
+  </div>
+
+  <div style="margin-top:20px;">
+    <ul>
+      <app-book-item *ngFor="let book of books" [book]="book"></app-book-item>
+    </ul>
+  </div>
+
+</div>
